@@ -8,6 +8,9 @@
   },
   "author": "gaju kadtan",
   "license": "ISC",
+  "engines": {
+    "node": "14.17.5"
+  },
   "dependencies": {
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",

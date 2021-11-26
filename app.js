@@ -66,7 +66,7 @@ passport.serializeUser(function(user, done) {
 passport.use(new GoogleStrategy({
     clientID: process.env.CLIENT_ID,
     clientSecret: process.env.CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/secrets" || "https://stark-bayou-90351.herokuapp.com/auth/google/secrets"
+    callbackURL: "http://localhost:3000/auth/google/secrets" || "https://discoversecrets.herokuapp.com/auth/google/secrets"
   },
   function(accessToken, refreshToken, profile, cb) {
       console.log(profile);
@@ -80,7 +80,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_CLIENT_ID,
   clientSecret: process.env.FACEBOOK_SECRET,
-  callbackURL: "http://localhost:3000/auth/facebook/secrets" || "https://stark-bayou-90351.herokuapp.com/auth/google/secrets"
+  callbackURL: "http://localhost:3000/auth/facebook/secrets" || "https://discoversecrets.herokuapp.com/auth/google/secrets"
 },
 function(accessToken, refreshToken, profile, cb) {
   User.findOrCreate({ facebookId: profile.id }, function (err, user) {
@@ -93,7 +93,7 @@ function(accessToken, refreshToken, profile, cb) {
 passport.use(new TwitterStrategy({
   consumerKey: process.env.TWITTER_API_KEY,
   consumerSecret: process.env.TWITTER_API_SECRET_KEY,
-  callbackURL: "http://localhost:3000/auth/twitter/secrets" || "https://stark-bayou-90351.herokuapp.com/auth/google/secrets"
+  callbackURL: "http://localhost:3000/auth/twitter/secrets" || "https://discoversecrets.herokuapp.com/auth/google/secrets"
 },
 function(token, tokenSecret, profile, cb) {
   User.findOrCreate({ twitterId: profile.id }, function (err, user) {

@@ -80,7 +80,7 @@ passport.use(new GoogleStrategy({
 passport.use(new FacebookStrategy({
   clientID: process.env.FACEBOOK_CLIENT_ID,
   clientSecret: process.env.FACEBOOK_SECRET,
-  callbackURL: "https://discoversecrets.herokuapp.com/auth/google/secrets"
+  callbackURL: "https://discoversecrets.herokuapp.com/auth/facebook/secrets"
 },
 function(accessToken, refreshToken, profile, cb) {
   User.findOrCreate({ facebookId: profile.id }, function (err, user) {
@@ -93,7 +93,7 @@ function(accessToken, refreshToken, profile, cb) {
 passport.use(new TwitterStrategy({
   consumerKey: process.env.TWITTER_API_KEY,
   consumerSecret: process.env.TWITTER_API_SECRET_KEY,
-  callbackURL: "https://discoversecrets.herokuapp.com/auth/google/secrets"
+  callbackURL: "https://discoversecrets.herokuapp.com/auth/twitter/secrets"
 },
 function(token, tokenSecret, profile, cb) {
   User.findOrCreate({ twitterId: profile.id }, function (err, user) {
